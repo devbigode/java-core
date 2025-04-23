@@ -41,5 +41,3 @@ public class School {
 ~~~
 
 #### Uma escola pode ter múltiplos alunos associados a ela, mas um estudante só pode estar matriculado em uma escola.
-
-## Aulas 64 a 66 - Associação unidirecional
