@@ -1,4 +1,4 @@
-package devdojo.association.unidirectional.domain;
+package devdojo.association.domain;
 
 /* Associação um para muitos */
 
@@ -7,7 +7,7 @@ public class Player {
     private String position;
     private int age;
 
-    /* Muitos jogadores, têm apenas um clube */
+    /* Muitos jogadores têm apenas um clube */
     private Team team;
 
     public Player(String name, String position, int age) {
@@ -70,5 +70,14 @@ public class Player {
 
     public void setTeam(Team team) {
         this.team = team;
+    }
+
+    @Override
+    public String toString() {
+        return "Player{" +
+                "name='" + name + '\'' +
+                ", position='" + position + '\'' +
+                ", age=" + age +
+                '}';
     }
 }

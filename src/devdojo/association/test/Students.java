@@ -1,7 +1,7 @@
-package devdojo.association.unidirectional.test;
+package devdojo.association.test;
 
-import devdojo.association.unidirectional.domain.School;
-import devdojo.association.unidirectional.domain.Student;
+import devdojo.association.domain.School;
+import devdojo.association.domain.Student;
 
 public class Students {
     public static void main(String[] args) {
