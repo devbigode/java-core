@@ -40,4 +40,26 @@ public class School {
 }
 ~~~
 
-#### Uma escola pode ter múltiplos alunos associados a ela, mas um estudante só pode estar matriculado em uma escola.
+#### Uma escola pode ter múltiplos alunos associados a ela, mas um estudante só pode estar matriculado numa escola.
+
+---
+## Aulas 95 a 100 - Destrinchando exceções
+
+![img.png](src/assets/images/img.png)
+
+### Error x Exception:
+
+- A maioria dos casos de erros não são causados pelo nosso programa estes são devido à falta de recursos do sistema e estes não são recuperáveis.
+- A maioria dos casos de exceções são causadas pelo nosso programa e estes são recuperáveis.
+
+### Tipos de exceções:
+
+#### Checked:
+
+- São lançadas em tempo de compilação e herdam da Classe Exception.
+
+#### Unchecked:
+
+- São lançadas em tempo de execução e herdam da Classe RuntimeException.
+
+![img_1.png](src/assets/images/img_1.png)
