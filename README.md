@@ -1,3 +1,5 @@
+
+
 ## Aulas 64 a 66 - Associação unidirecional
 
 ### 1. Exemplo um para muitos:
@@ -118,3 +120,73 @@ try {
 
 - Isso ocorre porque, no bloco catch (A | B e), o compilador trata e como efetivamente final, ou seja, você não pode reatribuir ou fazer downcast direto com segurança.
 - Ao usar InputMismatchException e NoSuchElementException em linha, o programa retornará erro na primeira exceção, uma vez que ela é filha da segunda.
+
+---
+## Aulas 106 e 107 - Wrappers
+
+#### As classes especiais Wrappers, dão mais poder às variáveis primitivas. Transformando-as em um Objeto com diversos métodos úteis.
+
+- Boxing ou autoboxing e unboxing:
+
+~~~
+Character character = '1'; // autoboxing
+
+boolean bool = Character.isLetter(character);
+
+char ch = character; // unboxing
+
+System.out.println(bool + " | " + ch); // Saída esperada: false | 1
+~~~
+
+#### Boxing consiste em "embrulhar" uma variável primitiva em um objeto Wrapper, o que inspira seu nome.
+
+---
+## Aulas 108 a 111 - String vs StringBuilder vs StringBuffer
+
+#### Entendendo as diferenças entre as três abordagens para manipulação de texto:
+
+- **String**: Imutável. Toda modificação gera um novo objeto na memória.
+- **StringBuilder**: Mutável e mais performática, indicada para uso em ambientes de thread única.
+- **StringBuffer**: Mutável e segura para múltiplas threads, mas menos performática que o StringBuilder por conta da sincronização.
+
+~~~
+String nome = "Ana";
+nome += " Silva"; // Cria um novo objeto: "Ana Silva"
+~~~
+
+#### Nesse exemplo, temos três objetos String:
+- `"Ana"` (literal)
+- `" Silva"` (literal)
+- `"Ana Silva"` (objeto novo criado na concatenação)
+
+
+### String Pool (intern pool)
+
+#### O String Pool é uma área de memória especial usada para armazenar strings literais reutilizáveis. Exemplo:
+
+~~~
+String a = "Teste";
+String b = "Teste";
+System.out.println(a == b); // true, ambos apontam para o mesmo objeto no pool
+
+String c = new String("Teste");
+System.out.println(a == c); // false, c é um novo objeto no heap
+
+String d = new String("Teste").intern();
+System.out.println(a == d); // true, d foi movido para o pool
+~~~
+
+- Strings criadas com `new` não são automaticamente adicionadas ao pool.
+- O método `intern()` adiciona a string ao pool, se ainda não estiver lá.
+
+#### O uso do pool melhora a eficiência de memória e evita duplicação desnecessária de dados imutáveis.
+
+---
+## Aulas 131 a 136 - Regex
+
+### Diferença entre matches() e find():
+
+- **matches()**: tenta casar o texto inteiro com o padrão.
+- **find()**: procura ocorrências válidas num texto maior, mesmo que ele não obedeça 100% ao padrão.
+
+[Ver exemplo PatternMatcherTest.java](src/devdojo/regex/test/PatternMatcherTest.java)
